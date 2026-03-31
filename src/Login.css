@@ -1,44 +1,65 @@
-/* 全体コンテナ */
-.Login-container {
-  height: 100vh;
+/* ===== 全体ページ ===== */
+.Login-page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px; /* ←左右の間隔 */
-
+  flex-direction: column;   /* 上下に段を積む */
+  align-items: center;      /* 横中央揃え */
+  gap: 30px;
+  padding: 20px;
+  height: 100vh;            /* 画面全体に固定 */
+  overflow: hidden;         /* 全体スクロール禁止 */
   background: linear-gradient(135deg, #667eea, #764ba2);
   background-size: 600% 600%;
+  background-attachment: fixed; /* 背景固定 */
   animation: gradientMove 20s ease infinite;
 }
 
 /* 背景アニメーション */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* 共通ボックス（ログイン＆新規登録） */
+/* ===== 中段：横並びボックス ===== */
+.Middle-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;    /* 高さ揃え */
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 共通：中段ボックス（新規登録 / ログイン / データベース） */
+.Login-box,
+.Register-box,
+.Database-box {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  height: 230px;           /* 高さ統一 */
+}
+
+/* 新規登録・ログインボックス */
 .Login-box,
 .Register-box {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
   width: 260px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  text-align: center;
 }
 
 /* タイトル */
 .Login-box h1,
 .Register-box h1 {
-  margin-bottom: 25px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.2;
+  font-size: 24px;
+  margin-top: 5px;      /* 上余白を減らす */
+  margin-bottom: 5px; 
 }
 
 /* 入力欄 */
@@ -46,7 +67,7 @@
 .Register-box input {
   width: 100%;
   padding: 10px;
-  margin: 12px 0;
+  margin: 3px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
@@ -65,27 +86,47 @@
   cursor: pointer;
 }
 
-/* ボタンホバー（←ここ大文字統一！） */
 .Login-box button:hover,
 .Register-box button:hover {
   background: #5a67d8;
 }
 
-/* テキスト */
-.Register-text {
-  margin-top: 15px;
+/* データベースボックス */
+.Database-box {
+  background-color: #111;
+  color: #0f0;
+  font-family: monospace;
+  width: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-y: auto;          /* データが多い場合のみスクロール */
+}
+
+/* DBの1件ごと */
+.db-item {
+  border-bottom: 1px solid #0f0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  word-break: break-all;
+}
+
+/* ===== 上段・下段ボックス ===== */
+.Hash-Learning-box {
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;                /* 横幅は適宜調整 */
+  max-width: 900px;
+  text-align: left;
+}
+
+/* フロー表示用 */
+.Flow-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-family: monospace;
   font-size: 14px;
-  color: #555;
-}
-
-/* リンク */
-.Register-link {
-  display: block;
-  margin-top: 5px;
-  color: #667eea;
-  cursor: pointer;
-}
-
-.Register-link:hover {
-  text-decoration: underline;
 }
