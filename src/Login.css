@@ -1,0 +1,91 @@
+/* 全体コンテナ */
+.Login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* ←左右の間隔 */
+
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-size: 600% 600%;
+  animation: gradientMove 20s ease infinite;
+}
+
+/* 背景アニメーション */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 共通ボックス（ログイン＆新規登録） */
+.Login-box,
+.Register-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* タイトル */
+.Login-box h1,
+.Register-box h1 {
+  margin-bottom: 25px;
+}
+
+/* 入力欄 */
+.Login-box input,
+.Register-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* ボタン */
+.Login-box button,
+.Register-box button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ボタンホバー（←ここ大文字統一！） */
+.Login-box button:hover,
+.Register-box button:hover {
+  background: #5a67d8;
+}
+
+/* テキスト */
+.Register-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* リンク */
+.Register-link {
+  display: block;
+  margin-top: 5px;
+  color: #667eea;
+  cursor: pointer;
+}
+
+.Register-link:hover {
+  text-decoration: underline;
+}

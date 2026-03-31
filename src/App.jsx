@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
+import Register from "./Register";
 
 function Title() {
   const navigate = useNavigate();
@@ -63,6 +64,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Title />} />
         <Route path='/Login' element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
