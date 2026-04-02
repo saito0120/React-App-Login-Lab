@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
 import "./Login.css";
 
 function Login() {
+  //次のページへ
+  const navigate = useNavigate()
   // ログイン用
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -190,6 +193,15 @@ function Login() {
 
       </div>
 
+      <div className="Next-page">
+        <p>ではなぜ脆弱性が発生するのかを次のページで学びましょう</p>
+          <button 
+            className="bottom-button"
+            onClick={() => navigate("/PasswordAttack")}
+          >
+            進む
+          </button>
+      </div>
     </div>
   );
 }

@@ -130,3 +130,14 @@
   font-family: monospace;
   font-size: 14px;
 }
+
+.Next-page {
+  color: black;
+}
+
+.Next-page p ,
+.bottom-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

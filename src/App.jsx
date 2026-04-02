@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { HashRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
+import PasswordAttack from "./PasswordAttack";
 
 function Title() {
   const navigate = useNavigate();
@@ -63,6 +64,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Title />} />
         <Route path='/Login' element={<Login />} />
+        <Route path='/PasswordAttack' element={<PasswordAttack />} />
       </Routes>
     </HashRouter>
   );
