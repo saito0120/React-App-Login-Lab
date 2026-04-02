@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage":"https://github.com/saito0120/React-App-Login-Lab",
 
   "scripts": {
     "dev": "vite",
@@ -12,6 +13,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+
   "dependencies": {
     "crypto-js": "^4.2.0",
     "gh-pages": "^6.3.0",
@@ -19,6 +21,7 @@
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.2"
   },
+  
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@types/react": "^19.2.14",
